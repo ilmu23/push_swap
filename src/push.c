@@ -6,7 +6,7 @@
 /*   By: ivalimak <ivalimak@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 14:10:51 by ivalimak          #+#    #+#             */
-/*   Updated: 2023/11/15 18:11:45 by ivalimak         ###   ########.fr       */
+/*   Updated: 2024/01/10 20:44:51 by ivalimak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ void	pa(t_stack *a, t_stack *b)
 {
 	if (b->numbers == 0)
 		return ;
-	shiftd(a);
+	if (a->numbers)
+		shiftd(a);
 	*(a->stack) = *(b->stack);
 	shiftu(b);
 	a->numbers++;
@@ -27,7 +28,8 @@ void	pb(t_stack *a, t_stack *b)
 {
 	if (a->numbers == 0)
 		return ;
-	shiftd(b);
+	if (b->numbers)
+		shiftd(b);
 	*(b->stack) = *(a->stack);
 	shiftu(a);
 	b->numbers++;

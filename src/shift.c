@@ -6,7 +6,7 @@
 /*   By: ivalimak <ivalimak@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 14:22:34 by ivalimak          #+#    #+#             */
-/*   Updated: 2023/11/18 18:12:54 by ivalimak         ###   ########.fr       */
+/*   Updated: 2024/01/10 20:41:26 by ivalimak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	shiftd(t_stack *s)
 {
 	size_t	i;
 
-	i = s->numbers;
+	i = s->numbers - 1;
 	while (i > 0)
 	{
 		s->stack[i] = s->stack[i - 1];
