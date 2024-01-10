@@ -6,7 +6,7 @@
 /*   By: ivalimak <ivalimak@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 17:54:28 by ivalimak          #+#    #+#             */
-/*   Updated: 2024/01/08 17:31:05 by ivalimak         ###   ########.fr       */
+/*   Updated: 2024/01/10 20:30:04 by ivalimak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,18 @@ static void	sort3(t_stack *a)
 
 static void	pusha(t_stack *a, t_stack *b)
 {
+	size_t			i;
 	static size_t	rotations;
 
 	if (a->numbers == 3)
 		rotations = 3;
-	while (rotations && *b->stack < a->stack[a->numbers - 1])
+	if (rotations && *b->stack < a->stack[a->numbers - 1])
 	{
-		operation(a, b, "rra");
-		rotations--;
+		i = 0;
+		while (i < rotations && *b->stack < a->stack[a->numbers - 1 - i])
+			i++;
+		postop(a, a->numbers - i, 'a');
+		rotations -= i;
 	}
 	operation(a, b, "pa");
 }
