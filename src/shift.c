@@ -6,7 +6,7 @@
 /*   By: ivalimak <ivalimak@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 14:22:34 by ivalimak          #+#    #+#             */
-/*   Updated: 2024/01/10 20:57:02 by ivalimak         ###   ########.fr       */
+/*   Updated: 2024/01/10 21:07:54 by ivalimak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,11 @@ void	shiftu(t_stack *s)
 	s->stack[i] = 0;
 }
 
-void	shiftd(t_stack *s)
+void	shiftd(t_stack *s, char type)
 {
 	size_t	i;
 
-	if (s->numbers == 1)
-	{
-		s->stack[1] = s->stack[0];
-		return ;
-	}
-	i = s->numbers - 1;
+	i = s->numbers - (type == 'r');
 	while (i > 0)
 	{
 		s->stack[i] = s->stack[i - 1];

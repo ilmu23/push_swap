@@ -6,7 +6,7 @@
 /*   By: ivalimak <ivalimak@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 17:50:38 by ivalimak          #+#    #+#             */
-/*   Updated: 2024/01/07 17:46:22 by ivalimak         ###   ########.fr       */
+/*   Updated: 2024/01/10 21:03:06 by ivalimak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	rrr(t_stack *a, t_stack *b);
 
 // shift.c
 void	shiftu(t_stack *s);
-void	shiftd(t_stack *s);
+void	shiftd(t_stack *s, char type);
 
 // utils.c
 size_t	max(size_t a, size_t b);
